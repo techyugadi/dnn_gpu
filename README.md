@@ -27,3 +27,5 @@ We also installed a tool called `nvtop` that displays GPU utilization on NVIDIA 
 `make`  \
 `make install`  \
 Now if we run `nvtop` command, the following output is displayed:
+
+To run sample programs directly on the host OS (instead of containers), at a minimum, Python must be installed. Anaconda and support for virtual environments are nice-to-have, but not essential.
