@@ -21,11 +21,17 @@ The above sample programs were tested on an *Ubuntu 18.04 Desktop* environment r
 
 Docker (Community Edition) was installed to run one or two Deep Learning frameworks in a container.
 
+![Checking Pre-requisites](https://github.com/techyugadi/dnn_gpu/blob/master/img/dnn01.png)
+**Check Prerequisites**
+
 We also installed a tool called `nvtop` that displays GPU utilization on NVIDIA platform, graphically. A summary of steps to build this tool from [source](https://github.com/Syllo/nvtop) is as follows:  \
 `git clone https://github.com/Syllo/nvtop.git`  \
-`cd nvtop; mkdir build; cd build; cmake`  \  
+`cd nvtop; mkdir build; cd build; cmake` \  
 `make`  \
 `make install`  \
 Now if we run `nvtop` command, the following output is displayed:
+
+![nvtop](https://github.com/techyugadi/dnn_gpu/blob/master/img/dnn02.png)
+**nvtop**
 
 To run sample programs directly on the host OS (instead of containers), at a minimum, Python must be installed. Anaconda and support for virtual environments are nice-to-have, but not essential.
