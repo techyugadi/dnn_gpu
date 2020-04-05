@@ -1,41 +1,22 @@
 #### Tensorflow on GPU
-This repository contains code to jumpstart Deep Neural Networks on a GPU Platform. The GPU platform chosen in this case is NVIDIA Tesla Dual T4. 
+To install Tensorflow on NVDIA GPU platform, a few prerequisites have to be satisfied:
+- One should also verify that NVIDIA driver for the installed graphics hardware is also installed (run `dpkg -l | grep nvidia-driver`)
+- A library named CUDA that enables massively parallel computing, must be installed (this can be verified by running `ldconfig -p | grep cuda`)
+- Accordingly, the CUDA binaries and shared libraries must be on the host PATH and LD_LIBRARY_PATH respectively
+- NVIDIA Deep Neural Network library that runs on top of CUDA, must be installed (this can be verified on Ubuntu, by running `dpkg -l | grep cudnn`)
+- A library named NCCL to support communicatio between multiple GPUs using shared memory
+Tensorflow-gpu runs on top of the above NVIDIA libraries.
 
-When a DNN is trained on a GPU platform, the training time may be shorter by orders of magnitude. But the right programmatic interfaces offered by the deep learning library must be invoked to ensure optimal utilization of the GPU resources.
+##### Tensorflow Docker 
+Alternatively, a Tensorflow docker image built by NVIDIA, taking care of all prerequisites, is available.
 
-##### Deep Learning Frameworks
-This repository contains a few sample programs for each of the following four Deep Learning frameworks:
-- Tensorflow
-- MXNet
-- PyTorch
-- Horovod
+The docker image is: `nvcr.io/nvidia/tensorflow:20.01-tf2-py3`. \
+This docker image is based on Tensorflow v2, that supports Python3.
 
-##### Sample Applications
-Two types of sample programs are available in this repository:
-- Quick *pre-flight checks* to ensure that the Deep Learning framework is *actually* recognizing the GPU instances and utilizing them for computational steps that *can* exploit one or more GPU instances.
-- Actual *Deep Learning examples*, like Image Classification, etc., programmed using GPU-enabled features of each library. 
+The command to run this docker image is:
 
-##### Pre-requisites
-The above sample programs were tested on an *Ubuntu 18.04 Desktop* environment running on NVIDIA hardware. Although a GUI is not essential for training a DNN, it may help in a development phase, for working with Python notebooks or other IDEs, displaying performance stats (GPU utilization) graphically, etc.
-- To verify the availability of NVIDIA GPU instances, run the command: `nvidia-smi`.
+`docker run --gpus all -it -v ~/workspace:/workspace -shm-size=1g --ulimit memlock=-1 nvcr.io/nvidia/tensorflow:20.01-tf2-py3`
 
-Docker (Community Edition) was installed to run one or two Deep Learning frameworks in a container.
+Note: This is the correct command for docker version 19.03 and above.
 
-![Checking Pre-requisites](https://github.com/techyugadi/dnn_gpu/blob/master/img/dnn01.png) \
-**Check Prerequisites**
-
-We also installed a tool called `nvtop` that displays GPU utilization on NVIDIA platform, graphically. A summary of steps to build this tool from [source](https://github.com/Syllo/nvtop) is as follows:  
-
-`apt install cmake libncurses5-dev libncursesw5-dev git` \
-`git clone https://github.com/Syllo/nvtop.git`  \
-`cd nvtop; mkdir build; cd build; cmake`   
-`make`  \
-`make install`  \
-Note: The above set of commands must be run as `root`.
-
-Now if we run `nvtop` command, the following output is displayed:
-
-![nvtop](https://github.com/techyugadi/dnn_gpu/blob/master/img/dnn02.png) \
-**nvtop**
-
-To run sample programs directly on the host OS (instead of containers), at a minimum, Python must be installed. Anaconda and support for virtual environments are nice-to-have, but not essential.
+This command will drop us into a shell inside the container. We should mount our Deep Learning programs and data into a suitable directory inside the container (e.g., `workspace`) and then run commands to start off machine learning workloads on Tensorflow.
