@@ -17,6 +17,6 @@ The command to run this docker image is:
 
 `docker run --gpus all -it -v ~/workspace:/workspace -shm-size=1g --ulimit memlock=-1 nvcr.io/nvidia/tensorflow:20.01-tf2-py3`
 
-Note: This is the correct command for docker version 19.03 and above.
+Note: This is the correct command for docker v19.03 and above.
 
-This command will drop us into a shell inside the container. We should mount our Deep Learning programs and data into a suitable directory inside the container (e.g., `workspace`) and then run commands to start off machine learning workloads on Tensorflow.
+This command will drop us into a shell inside the container. We should volume mount our Deep Learning programs and data into a suitable directory inside the container (e.g., `workspace`) and then run commands to start off machine learning workloads on Tensorflow.
