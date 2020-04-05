@@ -1,7 +1,7 @@
 #### Deep Learning on GPU
 This repository contains code to jumpstart Deep Neural Networks on a GPU Platform. The GPU platform chosen in this case is NVIDIA Tesla Dual T4. 
 
-When a DNN is trained on a GPU platform, the training time may be shorter by orders of magnitude. But the right programmatic interfaces offered by the deep learning library must be invoked to ensure optimal utilization of the GPU resources.
+When a DNN is trained on a GPU platform, the training time may be shorter by orders of magnitude. But the right programmatic interfaces offered by the deep learning library must be invoked, to ensure optimal utilization of the GPU resources.
 
 ##### Deep Learning Frameworks
 This repository contains a few sample programs for each of the following four Deep Learning frameworks:
