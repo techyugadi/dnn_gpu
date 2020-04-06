@@ -9,7 +9,11 @@ Tensorflow-gpu runs on top of the above NVIDIA libraries.
 
 Many cloud-hosted GPU platforms for running deep learning workloads, come bundle
 d with the above prerequisite packages. Otherwise, these libraries have to be in
-stalled manually.
+stalled manually. \
+For example, even a quick check using `nvidia-smi` command may indicate pre-inst
+alled drivers / libraries:
+
+![install](https://github.com/techyugadi/dnn_gpu/blob/master/img/dnn21.png)
 
 ##### Tensorflow Docker 
 Alternatively, a Tensorflow docker image built by NVIDIA, taking care of all prerequisites, is available.
