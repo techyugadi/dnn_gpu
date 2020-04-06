@@ -5,10 +5,10 @@ When a DNN is trained on a GPU platform, the training time may be shorter by ord
 
 ##### Deep Learning Frameworks
 This repository contains a few sample programs for each of the following four Deep Learning frameworks:
-- Tensorflow
-- MXNet
-- PyTorch
-- Horovod
+- [Tensorflow](https://github.com/techyugadi/dnn_gpu/tree/master/tensorflow)
+- [MXNet](https://github.com/techyugadi/dnn_gpu/tree/master/mxnet)
+- [PyTorch](https://github.com/techyugadi/dnn_gpu/tree/master/pytorch)
+- [Horovod](https://github.com/techyugadi/dnn_gpu/tree/master/horovod/)
 
 ##### Sample Applications
 Two types of sample programs are available in this repository:
