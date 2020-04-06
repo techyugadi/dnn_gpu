@@ -39,3 +39,6 @@ Now if we run `nvtop` command, the following output is displayed:
 **nvtop**
 
 To run sample programs directly on the host OS (instead of containers), at a minimum, Python must be installed. Anaconda and support for virtual environments are nice-to-have, but not essential.
+
+##### Acknowledgements
+These experiments were run on a GPU-2x.T4 instance on [E2E Networks](https://www.e2enetworks.com/gpu) Cloud.
