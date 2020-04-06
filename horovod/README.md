@@ -18,5 +18,5 @@ Also, most programs using Horovod may need the Python `future` package which can
 ##### Horovod Installation
 Once the prerequisites have been addressed, we can install Horovod Python package using `pip`.
 
-To install Horovod, run:
+To install Horovod, run: \
 `HOROVOD_GPU_ALLREDUCE=NCCL HOROVOD_GPU_BROADCAST=NCCL HOROVOD_WITH_TORCH=1 pip install --no-cache-dir horovod`
