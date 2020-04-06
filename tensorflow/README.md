@@ -1,5 +1,5 @@
 #### Tensorflow on GPU
-To install Tensorflow on NVDIA GPU platform, a few prerequisites have to be satisfied:
+To install [Tensorflow](https://www.tensorflow.org/) on NVDIA GPU platform, a few prerequisites have to be satisfied:
 - One should also verify that NVIDIA driver for the installed graphics hardware is also installed (run `dpkg -l | grep nvidia-driver`)
 - A library named CUDA that enables massively parallel computing, must be installed (this can be verified by running `ldconfig -p | grep cuda`)
 - Accordingly, the CUDA binaries and shared libraries must be on the host PATH and LD_LIBRARY_PATH respectively

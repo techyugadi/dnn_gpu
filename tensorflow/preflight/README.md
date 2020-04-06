@@ -6,10 +6,11 @@ If it detects that GPUs *are* available, it performs a simple matrix multiplicat
 ##### Running the program
 
 Copy the program `gpurun.py` to a location which can be volume mounted into the Tensorflow docker. Then run a command (depending on *your* intended volume mount) like this: \
-`docker run --gpus all -it -v ~/workspace:/workspace -shm-size=1g --ulimit memlock=-1 nvcr.io/nvidia/tensorflow:20.01-tf2-py3
+`docker run --gpus all -it -v ~/workspace:/workspace -shm-size=1g --ulimit memlock=-1 nvcr.io/nvidia/tensorflow:20.01-tf2-py3`
 
 You will be dropped into a shell within the container. From the directory where the program was volume-mounted, run: \
-`python gpurun.py`
+`python gpurun.py` \
+(We can run the program using `python3` also.)
 
 ![gpurun](https://github.com/techyugadi/dnn_gpu/blob/master/img/dnn03.png)
 
